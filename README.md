@@ -1,4 +1,4 @@
-# MindPulse-X
+# MindPulse-X 🧠
 
 ℹ️ Tentang Proyek Ini
 
