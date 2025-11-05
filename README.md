@@ -21,3 +21,5 @@ Model yang digunakan:
 Proyek ini dibuat untuk:
 - Mengeksplorasi perbandingan model klasik vs Transformers
 - Mendemonstrasikan end-to-end pipeline NLP (preprocessing → training → deployment dengan Streamlit)
+
+Link Demo: https://mindpulse-x.streamlit.app/ 
