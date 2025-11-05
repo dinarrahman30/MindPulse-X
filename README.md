@@ -10,7 +10,7 @@ Proyek ini bertujuan untuk mengklasifikasikan teks terkait kesehatan mental (mis
 - Bipolar
 - Suicidal
 - Normal
-- 
+  
 Model yang digunakan:
 
 - 🧮 Model klasik: TF-IDF + Logistic Regression
