@@ -1,7 +1,9 @@
 # MindPulse-X
 
 ℹ️ Tentang Proyek Ini
+
 **Mental Health Sentiment Analysis (MindPulse-X)**
+
 Proyek ini bertujuan untuk mengklasifikasikan teks terkait kesehatan mental (misalnya cuitan di Twitter/X) ke dalam beberapa kategori, seperti:
 
 - Anxiety
