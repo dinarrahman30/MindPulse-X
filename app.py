@@ -106,7 +106,7 @@ st.markdown("## Mental Health Text Classification")
 
 model_choice = st.radio(
     "Select the model you want to use:",
-    ("Classic model (TF-IDF + Logistic Regression)", "Transformers Model"),
+    ("Classic Model (TF-IDF + Logistic Regression)", "Transformers Model"),
 )
 
 user_text = st.text_area("Input text ✏️:", height=150)
