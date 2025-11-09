@@ -76,7 +76,7 @@ def predict_classic(text: str):
 # ======================
 # STREAMLIT UI
 # ======================
-st.sidebar.title("ℹ️ Tentang Proyek Ini")
+st.sidebar.title("ℹ️ About this project")
 st.sidebar.markdown(
     """
     **Mental Health Sentiment Analysis**
