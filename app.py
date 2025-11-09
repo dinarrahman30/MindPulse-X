@@ -79,24 +79,24 @@ def predict_classic(text: str):
 st.sidebar.title("ℹ️ Tentang Proyek Ini")
 st.sidebar.markdown(
     """
-    **Mental Health Sentiment Analysis**  
-    Proyek ini bertujuan untuk mengklasifikasikan teks terkait kesehatan mental
-    (misalnya cuitan di Twitter/X) ke dalam beberapa kategori, seperti:
+    **Mental Health Sentiment Analysis**
+    This project aims to classify text related to mental health
+    (for example, tweets from Twitter/X) into several categories, such as:
 
-    - Anxiety  
-    - Depression  
-    - Stress  
-    - Bipolar  
-    - Suicidal  
-    - Normal  
+    - Anxiety
+    - Depression
+    - Stress
+    - Bipolar
+    - Suicidal
+    - Normal
 
-    **Model yang digunakan:**
-    - 🧮 *Model klasik*: TF-IDF + Logistic Regression  
-    - 🤖 *Model Transformers*: Model bahasa pretrained yang di-finetune  
+    Models used:
+    - 🧮 Classical model: TF-IDF + Logistic Regression
+    - 🤖 Transformers model: Fine-tuned pretrained language model
 
-    Proyek ini dibuat untuk:
-    - Mengeksplorasi perbandingan model klasik vs Transformers  
-    - Mendemonstrasikan end-to-end pipeline NLP (preprocessing → training → deployment dengan Streamlit)
+    This project is built to:
+    - Explore a comparison between classical models and Transformers
+    - Demonstrate an end-to-end NLP pipeline (preprocessing → training → deployment with Streamlit)
     """
 )
 
@@ -105,27 +105,27 @@ st.markdown("---")
 st.markdown("## Mental Health Text Classification")
 
 model_choice = st.radio(
-    "Pilih model yang ingin digunakan:",
-    ("Model klasik (TF-IDF + Logistic Regression)", "Model Transformers"),
+    "Select the model you want to use:",
+    ("Classic model (TF-IDF + Logistic Regression)", "Transformers Model"),
 )
 
-user_text = st.text_area("Masukkan teks ✏️:", height=150)
+user_text = st.text_area("Input text ✏️:", height=150)
 
-if st.button("Klasifikasikan") and user_text.strip():
-    if model_choice.startswith("Model klasik"):
+if st.button("Classify") and user_text.strip():
+    if model_choice.startswith("Classic Model"):
         pred_label, probs, labels = predict_classic(user_text)
-        st.subheader(f"Prediksi utama (Model Klasik): **{pred_label}**")
+        st.subheader(f"Main prediction (Classic Model): **{pred_label}**")
 
         if probs is not None and labels is not None:
-            st.write("Probabilitas tiap label (Model Klasik):")
+            st.write("Probability of each label (Classic Model):")
             for lbl, p in zip(labels, probs):
                 st.write(f"- **{lbl}**: `{p:.3f}`")
 
     else:
         pred_label, probs, labels_map = predict_transformer(user_text)
-        st.subheader(f"Prediksi utama (Transformers): **{pred_label}**")
+        st.subheader(f"Main prediction (Transformers): **{pred_label}**")
 
-        st.write("Probabilitas tiap label (Transformers):")
+        st.write("Probability of each label (Transformers):")
         # labels_map = dict {0: 'Anxiety', 1: 'Bipolar', ...}
         for i, p in enumerate(probs):
             st.write(f"- **{labels_map[i]}**: `{p:.3f}`")
